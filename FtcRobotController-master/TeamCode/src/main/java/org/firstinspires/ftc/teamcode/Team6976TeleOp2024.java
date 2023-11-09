@@ -69,7 +69,7 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             double Arm2 = gamepad2.left_stick_y;
             robot.Arm1.setPower(Arm1);
             robot.Arm2.setPower(Arm2);
-            // a is open, b is close
+            // left bumper is open, right bumper is close
             if (gamepad2.right_bumper) {
                 robot.Intake.setPosition(1.0);
             }

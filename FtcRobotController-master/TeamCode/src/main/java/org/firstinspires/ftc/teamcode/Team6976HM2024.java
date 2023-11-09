@@ -60,10 +60,10 @@ public class Team6976HM2024 {
         DriveRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         DriveRightBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        Turret = hwMap.get(DcMotor.class,"Turret");
-        Turret.setDirection(DcMotorSimple.Direction.REVERSE);
-        Turret.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        //IntakeLift.setDirection(DcMotor.Direction.REVERSE);
+//        Turret = hwMap.get(DcMotor.class,"Turret");
+//        Turret.setDirection(DcMotorSimple.Direction.REVERSE);
+//        Turret.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+//        IntakeLift.setDirection(DcMotor.Direction.REVERSE);
 
         Elevator = hwMap.get(DcMotor.class, "Elevator");
         Elevator.setDirection(DcMotorSimple.Direction.REVERSE);
@@ -84,7 +84,7 @@ public class Team6976HM2024 {
 
         //Arm = hwMap.get(DcMotor.class, "Arm");
 
-        ColorSensor = hwMap.get(NormalizedColorSensor.class, "sensor");
+//        ColorSensor = hwMap.get(NormalizedColorSensor.class, "sensor");
 
     }
 }

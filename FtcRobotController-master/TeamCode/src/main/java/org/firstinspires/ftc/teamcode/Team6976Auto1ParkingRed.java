@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
-@Autonomous(name="Team6976Auto1ParkingBlue", group="6976")
+@Autonomous(name="Team6976Auto1ParkingRed", group="6976")
 
 public class Team6976Auto1ParkingRed extends LinearOpMode {
     Team6976HM2024 robot = new Team6976HM2024();

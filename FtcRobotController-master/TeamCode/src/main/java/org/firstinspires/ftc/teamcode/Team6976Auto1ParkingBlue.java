@@ -10,23 +10,23 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 public class Team6976Auto1ParkingBlue extends LinearOpMode {
     Team6976HM2024 robot = new Team6976HM2024();
     ElapsedTime Time = new ElapsedTime();
-    double multy = 0.3;
+    double multy = 1;
 
     @Override
     public void runOpMode() {
         robot.Map(hardwareMap);
         waitForStart();
 
-        //Strafes Right
+        //Moves forward
         double distance = 20; //Distance in inches to strafe
-        multy = 0.4; //Power setting to all motors
+        multy = 1; //Power setting to all motors
         robot.DriveRightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.DriveRightFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         double tick = (distance * 537.7)/(4 * Math.PI);
         Time.reset();
         robot.DriveRightFront.setPower(multy); //Setting the power to (multy) variable created above (+multy for Blue side)
-        robot.DriveLeftFront.setPower(-multy); //Link to Wheel Direction Mapping Below
-        robot.DriveRightBack.setPower(-multy); //https://gm0.org/en/latest/docs/software/tutorials/mecanum-drive.html
+        robot.DriveLeftFront.setPower(multy); //Link to Wheel Direction Mapping Below
+        robot.DriveRightBack.setPower(multy); //https://gm0.org/en/latest/docs/software/tutorials/mecanum-drive.html
         robot.DriveLeftBack.setPower(multy);
         while(opModeIsActive() && Time.milliseconds() < 2000 && robot.DriveRightFront.getCurrentPosition() < tick) { //If Encoder is outputting incorrectly, motor will automatically stop if time in miliseconds has been reached
             telemetry.addData("Encoder Val", robot.DriveRightFront.getCurrentPosition()); //Printing Telemtry values to the phone

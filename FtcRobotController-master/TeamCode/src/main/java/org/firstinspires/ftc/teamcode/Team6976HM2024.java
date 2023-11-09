@@ -65,10 +65,10 @@ public class Team6976HM2024 {
 //        Turret.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 //        IntakeLift.setDirection(DcMotor.Direction.REVERSE);
 
-        Elevator = hwMap.get(DcMotor.class, "Elevator");
-        Elevator.setDirection(DcMotorSimple.Direction.REVERSE);
-        Elevator.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        Elevator.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+//        Elevator = hwMap.get(DcMotor.class, "Elevator");
+//        Elevator.setDirection(DcMotorSimple.Direction.REVERSE);
+//        Elevator.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+//        Elevator.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         Arm1 = hwMap.get(DcMotor.class, "Arm1");
         Arm1.setDirection(DcMotorSimple.Direction.REVERSE);

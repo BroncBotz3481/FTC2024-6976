@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.hardware.NormalizedColorSensor;
 import com.qualcomm.robotcore.hardware.NormalizedRGBA;
 import com.qualcomm.robotcore.hardware.SwitchableLight;
 
-public class Team4008HM2023 {
+public class Team6976HM2024 {
     public DcMotor DriveRightBack = null;
     public DcMotor DriveLeftBack = null;
     public DcMotor DriveLeftFront = null;

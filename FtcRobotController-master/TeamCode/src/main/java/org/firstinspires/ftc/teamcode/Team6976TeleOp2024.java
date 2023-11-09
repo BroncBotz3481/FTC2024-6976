@@ -24,7 +24,7 @@ public class Team6976TeleOp2024 extends LinearOpMode {
         robot.DriveRightBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.DriveLeftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.DriveLeftFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        robot.IntakeLeft.setPosition(0.3);
+        robot.Intake.setPosition(0.3);
 
         int count = 0;
         //robot.Lights.setPattern(RevBlinkinLedDriver.BlinkinPattern.BEATS_PER_MINUTE_PARTY_PALETTE);
@@ -70,22 +70,22 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             robot.Arm1.setPower(Arm1);
             robot.Arm2.setPower(Arm2);
             // a is open, b is close
-            if (gamepad2.b) {
-                robot.IntakeLeft.setPosition(0.8);
+            if (gamepad2.right_bumper) {
+                robot.Intake.setPosition(1.0);
             }
-            if (gamepad2.a){
-                robot.IntakeLeft.setPosition(0.3);
+            if (gamepad2.left_bumper){
+                robot.Intake.setPosition(0.3);
             }
 
-            if(gamepad2.y){
-                robot.Arm1.setPower(.9);
-            }
-            else if (gamepad2.x){
-                robot.Arm1.setPower(-1);
-            }
-            else {
-                robot.Arm1.setPower(0);
-            }
+//            if(gamepad2.y){
+//                robot.Arm1.setPower(.9);
+//            }
+//            else if (gamepad2.x){
+//                robot.Arm1.setPower(-1);
+//            }
+//            else {
+//                robot.Arm1.setPower(0);
+//            }
         }
     }
 }

@@ -23,7 +23,7 @@ public class Team6976HM2024 {
 
     public DcMotor Arm2 = null;
 
-    public Servo IntakeLeft = null;
+    public Servo Intake = null;
 
     public NormalizedColorSensor ColorSensor = null;
 
@@ -80,7 +80,7 @@ public class Team6976HM2024 {
         Arm2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         Arm2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        IntakeLeft = hwMap.get(Servo.class, "Servo1");
+        Intake = hwMap.get(Servo.class, "Servo1");
 
         //Arm = hwMap.get(DcMotor.class, "Arm");
 

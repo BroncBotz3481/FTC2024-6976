@@ -19,7 +19,9 @@ public class Team6976HM2024 {
     public DcMotor Turret = null;
     public DcMotor Elevator = null;
 
-    public DcMotor Arm = null;
+    public DcMotor Arm1 = null;
+
+    public DcMotor Arm2 = null;
 
     public Servo IntakeLeft = null;
 
@@ -68,9 +70,19 @@ public class Team6976HM2024 {
         Elevator.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         Elevator.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
+        Arm1 = hwMap.get(DcMotor.class, "Arm1");
+        Arm1.setDirection(DcMotorSimple.Direction.REVERSE);
+        Arm1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        Arm1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+        Arm2 = hwMap.get(DcMotor.class, "Arm2");
+        Arm2.setDirection(DcMotorSimple.Direction.REVERSE);
+        Arm2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        Arm2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
         IntakeLeft = hwMap.get(Servo.class, "Servo1");
 
-        Arm = hwMap.get(DcMotor.class, "Arm");
+        //Arm = hwMap.get(DcMotor.class, "Arm");
 
         ColorSensor = hwMap.get(NormalizedColorSensor.class, "sensor");
 

@@ -65,10 +65,10 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             robot.DriveRightFront.setPower(frontRightPower * mag);
             robot.DriveRightBack.setPower(backRightPower * mag);
 
-            double TurretPower = gamepad2.right_stick_x*0.5;
-            double ElevatorPower = gamepad2.left_stick_y;
-            robot.Turret.setPower(TurretPower);
-            robot.Elevator.setPower(-ElevatorPower);
+            double Arm1 = gamepad2.right_stick_y;
+            double Arm2 = gamepad2.left_stick_y;
+            robot.Arm1.setPower(Arm1);
+            robot.Arm2.setPower(Arm2);
             // a is open, b is close
             if (gamepad2.b) {
                 robot.IntakeLeft.setPosition(0.8);
@@ -78,13 +78,13 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             }
 
             if(gamepad2.y){
-                robot.Arm.setPower(.9);
+                robot.Arm1.setPower(.9);
             }
             else if (gamepad2.x){
-                robot.Arm.setPower(-1);
+                robot.Arm1.setPower(-1);
             }
             else {
-                robot.Arm.setPower(0);
+                robot.Arm1.setPower(0);
             }
         }
     }

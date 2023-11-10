@@ -61,9 +61,9 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             telemetry.update();
 
             robot.DriveLeftFront.setPower(frontLeftPower * mag);
-            robot.DriveLeftBack.setPower(backLeftPower * mag);
+            robot.DriveLeftBack.setPower(backLeftPower * -mag);
             robot.DriveRightFront.setPower(frontRightPower * mag);
-            robot.DriveRightBack.setPower(backRightPower * mag);
+            robot.DriveRightBack.setPower(backRightPower * -mag);
 
             double Arm1 = gamepad2.right_stick_y;
             double Arm2 = gamepad2.left_stick_y;

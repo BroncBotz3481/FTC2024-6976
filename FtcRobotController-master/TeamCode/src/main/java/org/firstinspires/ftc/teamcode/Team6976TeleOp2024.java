@@ -77,10 +77,12 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             while (gamepad2.right_bumper) {
                 robot.Intake.setPosition(1.0);
                 robot.Intake2.setPosition(-1.0);
+                System.out.println("intake open");
             }
             while (gamepad2.left_bumper){
                 robot.Intake2.setPosition(0.3);
                 robot.Intake.setPosition(-0.3);
+                System.out.println("intake close");
             }
 
 //            if(gamepad2.y){

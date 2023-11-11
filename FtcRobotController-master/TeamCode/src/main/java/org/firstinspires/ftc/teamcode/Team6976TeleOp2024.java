@@ -24,7 +24,8 @@ public class Team6976TeleOp2024 extends LinearOpMode {
         robot.DriveRightBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.DriveLeftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.DriveLeftFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        robot.Intake.setPosition(0.3);
+        robot.Intake.setPosition(0);
+        robot.Intake2.setPosition(0);
 
         int count = 0;
         //robot.Lights.setPattern(RevBlinkinLedDriver.BlinkinPattern.BEATS_PER_MINUTE_PARTY_PALETTE);
@@ -32,7 +33,7 @@ public class Team6976TeleOp2024 extends LinearOpMode {
 
         while (opModeIsActive()) {
             boolean speedslow = gamepad1.right_bumper;
-            double mag = speedslow ? 0.5 : 1.0;
+            double mag = speedslow ? 0.2 : 1.0;
 
             double y = gamepad1.left_stick_y; // Remember, this is reversed!
             double x = -gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
@@ -65,7 +66,7 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             robot.DriveRightFront.setPower(frontRightPower * mag);
             robot.DriveRightBack.setPower(backRightPower * -mag);
             boolean ArmSlow = gamepad2.x;
-            double mag2 = ArmSlow ? 0.35 : 1.0;
+            double mag2 = ArmSlow ? 0.5 : 1.0;
 
             double Arm1 = gamepad2.right_stick_y;
             double Arm2 = gamepad2.left_stick_y;
@@ -74,17 +75,28 @@ public class Team6976TeleOp2024 extends LinearOpMode {
 
 
             // left bumper is open, right bumper is close
-            while (gamepad2.right_bumper) {
-                robot.Intake.setPosition(1.0);
-                robot.Intake2.setPosition(-1.0);
+//            while (gamepad2.right_bumper) {
+//                robot.Intake.setPosition(0);
+//                robot.Intake2.setPosition(0);
+//                System.out.println("intake open");
+//            }
+//            while (gamepad2.left_bumper){
+//                robot.Intake2.setPosition(0.7);
+//                robot.Intake.setPosition(-0.7);
+//                System.out.println("intake close");
+//            }
+
+            if (gamepad2.left_bumper) {
+                robot.Intake.setPosition(0.3);
+                robot.Intake2.setPosition(0);
                 System.out.println("intake open");
             }
-            while (gamepad2.left_bumper){
-                robot.Intake2.setPosition(1);
-                robot.Intake.setPosition(-1);
+
+            if (gamepad2.right_bumper) {
+                robot.Intake.setPosition(0.1);
+                robot.Intake2.setPosition(0.1);
                 System.out.println("intake close");
             }
-
 //            if(gamepad2.y){
 //                robot.Arm1.setPower(.9);
 //            }

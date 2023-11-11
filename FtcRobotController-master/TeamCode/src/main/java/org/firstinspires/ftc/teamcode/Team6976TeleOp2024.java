@@ -65,7 +65,7 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             robot.DriveRightFront.setPower(frontRightPower * mag);
             robot.DriveRightBack.setPower(backRightPower * -mag);
             boolean ArmSlow = gamepad2.x;
-            double mag2 = ArmSlow ? 0.5 : 1.0;
+            double mag2 = ArmSlow ? 0.35 : 1.0;
 
             double Arm1 = gamepad2.right_stick_y;
             double Arm2 = gamepad2.left_stick_y;
@@ -75,10 +75,12 @@ public class Team6976TeleOp2024 extends LinearOpMode {
 
             // left bumper is open, right bumper is close
             while (gamepad2.right_bumper) {
-                robot.Intake.setPosition(0.8);
+                robot.Intake.setPosition(1.0);
+                robot.Intake2.setPosition(-1.0);
             }
             while (gamepad2.left_bumper){
-                robot.Intake.setPosition(0.3);
+                robot.Intake2.setPosition(0.3);
+                robot.Intake.setPosition(-0.3);
             }
 
 //            if(gamepad2.y){

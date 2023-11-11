@@ -25,6 +25,8 @@ public class Team6976HM2024 {
 
     public Servo Intake = null;
 
+    public Servo Intake2 = null;
+
     public NormalizedColorSensor ColorSensor = null;
 
 
@@ -81,6 +83,8 @@ public class Team6976HM2024 {
         Arm2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         Intake = hwMap.get(Servo.class, "Intake");
+
+        Intake2 = hwMap.get(Servo.class, "Intake2");
 
         //Arm = hwMap.get(DcMotor.class, "Arm");
 

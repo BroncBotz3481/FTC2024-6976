@@ -35,20 +35,26 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             boolean speedslow = gamepad1.right_bumper;
             double mag = speedslow ? 0.5 : 1.0;
 
+            /* If you want a deadzone on your controller
+            double y = (Math.abs(gamepad1.left_stick_y) > 0.1 ? gamepad1.left_stick_y : 0); // Remember, this is reversed!
+            double x = -(Math.abs(gamepad1.left_stick_x) > 0.1 ? gamepad1.left_stick_x : 0) * 1.1; // Counteract imperfect strafing
+            double rx = -gamepad1.right_stick_x;
+             */
+
+
             double y = gamepad1.left_stick_y; // Remember, this is reversed!
             double x = -gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
             double rx = -gamepad1.right_stick_x;
-
 
           /*  if (robot.Touched.isPressed()) {
                 telemetry.addData("Touch", robot.Touched.isPressed());
                 telemetry.update();
             } */
 
-            // hello
-            // Denominator is the largest motor power (absolute value) or 1
-            // This ensures all the powers maintain the same ratio, but only when
-            // at least one is out of the range [-1, 1]
+            /*
+            Denominator is the largest motor power (absolute value) or 1
+            This ensures all the powers maintain the same ratio, but only when
+            at least one is out of the range [-1, 1] */
             double denominator = Math.max(Math.abs(y) + Math.abs(x) + Math.abs(rx), 1.5);
             double frontLeftPower = (y + x + rx) / denominator;
             double backLeftPower = (y - x + rx) / denominator;

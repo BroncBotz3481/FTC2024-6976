@@ -33,7 +33,7 @@ public class Team6976TeleOp2024 extends LinearOpMode {
 
         while (opModeIsActive()) {
             boolean speedslow = gamepad1.right_bumper;
-            double mag = speedslow ? 0.2 : 1.0;
+            double mag = speedslow ? 0.5 : 1.0;
 
             double y = gamepad1.left_stick_y; // Remember, this is reversed!
             double x = -gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
@@ -66,12 +66,14 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             robot.DriveRightFront.setPower(frontRightPower * mag);
             robot.DriveRightBack.setPower(backRightPower * -mag);
             boolean ArmSlow = gamepad2.x;
-            double mag2 = ArmSlow ? 0.7 : 1;
+            double mag2 = ArmSlow ? 0.7 : 0.95;
+            boolean ArmSuperSlow = gamepad2.y;
+            double mag3 = ArmSuperSlow ? 0.55 : 1;
 
             double Arm1 = gamepad2.right_stick_y;
             double Arm2 = gamepad2.left_stick_y;
-            robot.Arm1.setPower(Arm1 * mag2);
-            robot.Arm2.setPower(Arm2 *mag2);
+            robot.Arm1.setPower(Arm1 * mag2*mag3);
+            robot.Arm2.setPower(Arm2 *mag2 * mag3);
 
 
             // left bumper is open, right bumper is close

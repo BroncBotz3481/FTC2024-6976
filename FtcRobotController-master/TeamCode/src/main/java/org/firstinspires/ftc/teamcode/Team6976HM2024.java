@@ -16,8 +16,9 @@ public class Team6976HM2024 {
     public DcMotor DriveLeftFront = null;
     public DcMotor DriveRightFront = null;
 
-    public DcMotor Turret = null;
-    public DcMotor Elevator = null;
+   // public DcMotor Turret = null;
+
+   // public DcMotor Elevator = null;
 
     public DcMotor Arm1 = null;
 

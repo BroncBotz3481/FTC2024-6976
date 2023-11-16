@@ -24,6 +24,8 @@ public class Team6976HM2024 {
 
     public DcMotor Arm2 = null;
 
+    public DcMotor Arm2b = null;
+
     public Servo Intake = null;
 
     public Servo Intake2 = null;
@@ -82,6 +84,11 @@ public class Team6976HM2024 {
         Arm2.setDirection(DcMotorSimple.Direction.REVERSE);
         Arm2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         Arm2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+        Arm2b = hwMap.get(DcMotor.class, "Arm2b");
+        Arm2b.setDirection(DcMotorSimple.Direction.REVERSE);
+        Arm2b.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        Arm2b.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         Intake = hwMap.get(Servo.class, "Intake");
 

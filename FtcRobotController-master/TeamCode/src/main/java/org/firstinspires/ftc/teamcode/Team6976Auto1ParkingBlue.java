@@ -24,10 +24,10 @@ public class Team6976Auto1ParkingBlue extends LinearOpMode {
         robot.DriveRightFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         double tick = (distance * 537.7)/(4 * Math.PI);
         Time.reset();
-        robot.DriveRightFront.setPower(multy); //Setting the power to (multy) variable created above (+multy for Blue side)
+        robot.DriveRightFront.setPower(-multy); //Setting the power to (multy) variable created above (+multy for Blue side)
         robot.DriveLeftFront.setPower(multy); //Link to Wheel Direction Mapping Below
         robot.DriveRightBack.setPower(multy); //https://gm0.org/en/latest/docs/software/tutorials/mecanum-drive.html
-        robot.DriveLeftBack.setPower(multy);
+        robot.DriveLeftBack.setPower(-multy);
         while(opModeIsActive() && Time.milliseconds() < 2000 && robot.DriveRightFront.getCurrentPosition() < tick) { //If Encoder is outputting incorrectly, motor will automatically stop if time in miliseconds has been reached
             telemetry.addData("Encoder Val", robot.DriveRightFront.getCurrentPosition()); //Printing Telemtry values to the phone
             telemetry.update(); //Constantly updates telemetry to the phone

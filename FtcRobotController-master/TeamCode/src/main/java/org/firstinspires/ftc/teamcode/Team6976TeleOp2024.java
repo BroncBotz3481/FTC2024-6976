@@ -71,6 +71,10 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             robot.DriveLeftBack.setPower(backLeftPower * -mag);
             robot.DriveRightFront.setPower(frontRightPower * mag);
             robot.DriveRightBack.setPower(backRightPower * -mag);
+
+
+
+
             boolean ArmSlow = gamepad2.x;
             double mag2 = ArmSlow ? 0.55 : 0.8;
             boolean ArmSuperSlow = gamepad2.y;

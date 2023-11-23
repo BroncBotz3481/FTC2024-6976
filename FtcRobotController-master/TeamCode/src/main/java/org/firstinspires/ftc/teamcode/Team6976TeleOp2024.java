@@ -55,11 +55,26 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             Denominator is the largest motor power (absolute value) or 1
             This ensures all the powers maintain the same ratio, but only when
             at least one is out of the range [-1, 1] */
+
             double denominator = Math.max(Math.abs(y) + Math.abs(x) + Math.abs(rx), 1.5);
             double frontLeftPower = (y + x + rx) / denominator;
             double backLeftPower = (y - x + rx) / denominator;
             double frontRightPower = (y - x - rx) / denominator;
             double backRightPower = (y + x - rx) / denominator;
+
+            while(gamepad1.dpad_left) {
+                robot.DriveLeftFront.setPower(-0.5);
+                robot.DriveRightFront.setPower(0.5);
+                robot.DriveLeftBack.setPower(0.5);
+                robot.DriveRightBack.setPower(-0.5);
+            }
+
+            while(gamepad1.dpad_right) {
+                robot.DriveLeftFront.setPower(0.5);
+                robot.DriveRightFront.setPower(-0.5);
+                robot.DriveLeftBack.setPower(-0.5);
+                robot.DriveRightBack.setPower(0.5);
+            }
 
             telemetry.addData("RightFront", robot.DriveRightFront.getCurrentPosition());
             telemetry.addData("RightBack", robot.DriveRightBack.getCurrentPosition());

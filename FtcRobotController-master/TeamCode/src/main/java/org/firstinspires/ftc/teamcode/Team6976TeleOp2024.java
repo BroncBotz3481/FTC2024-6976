@@ -90,8 +90,8 @@ public class Team6976TeleOp2024 extends LinearOpMode {
 
 
 
-            boolean ArmSlow = gamepad2.x;
-            double mag2 = ArmSlow ? 0.55 : 0.8;
+            boolean ArmSpeed = gamepad2.x;
+            double mag2 = ArmSpeed ? 0.8 : 0.55;
             boolean ArmSuperSlow = gamepad2.y;
             double mag3 = ArmSuperSlow ? 0.4 : 1;
 

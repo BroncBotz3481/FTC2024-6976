@@ -25,7 +25,7 @@ public class Team6976AutoPropMiddleRed extends LinearOpMode {
         robot.Intake2.setPosition(0);
         moveArm(-0.5, 2000);
         moveBackward(0.8 , 2000);
-        moveRight(0.8, 2000);
+        moveLeft(0.8, 2000);
 
 
 

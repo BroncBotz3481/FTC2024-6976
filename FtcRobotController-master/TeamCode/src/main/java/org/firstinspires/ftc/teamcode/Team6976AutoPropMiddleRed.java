@@ -82,11 +82,11 @@ public class Team6976AutoPropMiddleRed extends LinearOpMode {
         robot.DriveRightBack.setPower(0);
         robot.DriveLeftBack.setPower(0);
     }
-    public void moveRight (double power, int time){
-        robot.DriveRightFront.setPower(power);
-        robot.DriveLeftFront.setPower(-power);
-        robot.DriveRightBack.setPower(-power);
-        robot.DriveLeftBack.setPower(power);
+    public void moveLeft (double power, int time){
+        robot.DriveRightFront.setPower(-power);
+        robot.DriveLeftFront.setPower(power);
+        robot.DriveRightBack.setPower(power);
+        robot.DriveLeftBack.setPower(-power);
         sleep(time);
         robot.DriveRightFront.setPower(0);
         robot.DriveLeftFront.setPower(0);

@@ -29,8 +29,8 @@ public class Team6976TeleOp2024 extends LinearOpMode {
 
         int count = 0;
         //Intake starts open
-//        boolean isOpen = true;
-//        boolean isOpen2 = true;
+        boolean isOpen = true;
+        boolean isOpen2 = true;
         //robot.Lights.setPattern(RevBlinkinLedDriver.BlinkinPattern.BEATS_PER_MINUTE_PARTY_PALETTE);
         waitForStart();
 
@@ -118,48 +118,48 @@ public class Team6976TeleOp2024 extends LinearOpMode {
 //                System.out.println("intake close");
 //            }
 
-            if (gamepad2.left_bumper) {
-                robot.Intake2.setPosition(0.1);
-
-
-            }
-
-            while (gamepad2.left_trigger > 0.3) {
-
-                robot.Intake2.setPosition(0);
-
-
+//            if (gamepad2.left_bumper) {
+//                robot.Intake.setPosition(0.3);
+//                robot.Intake2.setPosition(0);
+//
+//            }
+//
+//            if (gamepad2.right_bumper) {
+//                robot.Intake.setPosition(0.1);
+//                robot.Intake2.setPosition(0.1);
+//
+//            }
 
             //One side intaked controls
+//            if (gamepad2.right_bumper) { //Closed
+//                robot.Intake.setPosition(0.1);
+//            }
+//            if (gamepad2.right_trigger > 0.3) {
+//                robot.Intake.setPosition(0.3); //Opened
+//            }
             if (gamepad2.right_bumper) { //Closed
-                robot.Intake.setPosition(0.1);
+                if(isOpen2) {
+                    robot.Intake.setPosition(0.1);
+                    isOpen2 = false;
+                }
+                else{
+                    robot.Intake.setPosition(0.3);
+                    isOpen2 = true;
+                }
             }
-            while (gamepad2.right_trigger > 0.3) {
-                robot.Intake.setPosition(0.3); //Opened
+
+
+
+            if (gamepad2.left_bumper) {
+                if(isOpen) {
+                    robot.Intake2.setPosition(0.1);
+                    isOpen = false;
+                }
+                else{
+                    robot.Intake2.setPosition(0);
+                    isOpen = true;
+                }
             }
-//            while (gamepad2.right_bumper) { //Closed
-//                if(isOpen2) {
-//                    robot.Intake.setPosition(0.1);
-//                    isOpen2 = false;
-//                }
-//                else{
-//                    robot.Intake.setPosition(0.3);
-//                    isOpen2 = true;
-//                }
-//            }
-//
-//
-//
-//            while (gamepad2.left_bumper) {
-//                if(isOpen) {
-//                    robot.Intake2.setPosition(0.1);
-//                    isOpen = false;
-//                }
-//                else{
-//                    robot.Intake2.setPosition(0);
-//                    isOpen = true;
-//                }
-//            }
 
 //            if(gamepad2.y){
 //                robot.Arm1.setPower(.9);

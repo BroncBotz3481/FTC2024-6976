@@ -28,7 +28,6 @@ public class Team6976TeleOp2024 extends LinearOpMode {
         robot.Intake2.setPosition(0);
 
         int count = 0;
-        //Intake starts open
         boolean isOpen = true;
         boolean isOpen2 = true;
         //robot.Lights.setPattern(RevBlinkinLedDriver.BlinkinPattern.BEATS_PER_MINUTE_PARTY_PALETTE);
@@ -143,14 +142,14 @@ public class Team6976TeleOp2024 extends LinearOpMode {
                     isOpen2 = false;
                 }
                 else{
-                    robot.Intake.setPosition(0.3);
+                    robot.Intake.setPosition(0);
                     isOpen2 = true;
                 }
             }
 
 
 
-            if (gamepad2.left_bumper) {
+            if (gamepad2.left_bumper) { //Closed
                 if(isOpen) {
                     robot.Intake2.setPosition(0.1);
                     isOpen = false;

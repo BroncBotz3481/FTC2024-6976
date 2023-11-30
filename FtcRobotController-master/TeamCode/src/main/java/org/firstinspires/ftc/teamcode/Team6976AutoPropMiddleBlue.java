@@ -18,13 +18,8 @@ public class Team6976AutoPropMiddleBlue extends LinearOpMode {
         robot.Intake2.setPosition(0.1);
         waitForStart();
 
-        moveForward(0.8 , 2000); //moves forward
-        moveArm(0.5, 2000);//the arm moves down
-        robot.Intake.setPosition(0.3);//intake open
-        robot.Intake2.setPosition(0);
-        moveArm(-0.5, 2000);
-        moveBackward(0.8 , 2000);
-        moveLeft(0.8, 3500);
+        moveForward(0.5 , 2000); //moves forward
+
 
 
 
@@ -60,10 +55,10 @@ public class Team6976AutoPropMiddleBlue extends LinearOpMode {
 //        sleep(1000);
     }
     public void moveForward (double power, int time){
-        robot.DriveRightFront.setPower(power);
-        robot.DriveLeftFront.setPower(power);
-        robot.DriveRightBack.setPower(-power);
-        robot.DriveLeftBack.setPower(-power);
+        robot.DriveRightFront.setPower(-power);
+        robot.DriveLeftFront.setPower(-power);
+        robot.DriveRightBack.setPower(power);
+        robot.DriveLeftBack.setPower(power);
         sleep(time);
         robot.DriveRightFront.setPower(0);
         robot.DriveLeftFront.setPower(0);

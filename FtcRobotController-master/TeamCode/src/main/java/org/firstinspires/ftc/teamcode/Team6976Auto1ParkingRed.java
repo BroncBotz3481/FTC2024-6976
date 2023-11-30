@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 public class Team6976Auto1ParkingRed extends LinearOpMode {
     Team6976HM2024 robot = new Team6976HM2024();
     ElapsedTime Time = new ElapsedTime();
-    double multy = 1;
+    double multy = 0.5;
 
     @Override
     public void runOpMode() {
@@ -17,8 +17,8 @@ public class Team6976Auto1ParkingRed extends LinearOpMode {
         waitForStart();
 
         //Strafes Left
-        double distance = 20; //Distance in inches to strafe
-        multy = 0.4; //Power setting to all motors
+        double distance = 22; //Distance in inches to strafe
+        multy = 0.5; //Power setting to all motors
         robot.DriveLeftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.DriveLeftFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         double tick = (distance * 537.7)/(4 * Math.PI);

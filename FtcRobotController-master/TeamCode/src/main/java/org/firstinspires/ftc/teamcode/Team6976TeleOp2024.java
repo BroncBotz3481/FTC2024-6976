@@ -101,13 +101,29 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             double Arm2b = gamepad2.left_stick_y;
             double Arm2 = gamepad2.left_stick_y;
 
-            while(gamepad2.dpad_up){
-                robot.Arm2b.setPower(0.6 * mag2 * mag3 * mag4);
-                robot.Arm2.setPower(0.6 *mag2 * mag3 * mag4);
+            while(gamepad2.dpad_left){
+                robot.DriveLeftFront.setPower(0.3);
+                robot.DriveRightFront.setPower(-0.3);
+                robot.DriveLeftBack.setPower(0.3);
+                robot.DriveRightBack.setPower(-0.3);
+            }
+            while(gamepad2.dpad_right){
+                robot.DriveLeftFront.setPower(-0.3);
+                robot.DriveRightFront.setPower(0.3);
+                robot.DriveLeftBack.setPower(-0.3);
+                robot.DriveRightBack.setPower(0.3);
             }
             while(gamepad2.dpad_down){
-                robot.Arm2b.setPower(-0.6 * mag2 * mag3 * mag4);
-                robot.Arm2.setPower(-0.6 *mag2 * mag3 * mag4);
+                robot.DriveLeftFront.setPower(-0.3);
+                robot.DriveRightFront.setPower(-0.3);
+                robot.DriveLeftBack.setPower(0.3);
+                robot.DriveRightBack.setPower(0.3);
+            }
+            while(gamepad2.dpad_up){
+                robot.DriveLeftFront.setPower(0.3);
+                robot.DriveRightFront.setPower(0.3);
+                robot.DriveLeftBack.setPower(-0.3);
+                robot.DriveRightBack.setPower(-0.3);
             }
 
             robot.Arm1.setPower(Arm1 * mag2 * mag3 * mag4);

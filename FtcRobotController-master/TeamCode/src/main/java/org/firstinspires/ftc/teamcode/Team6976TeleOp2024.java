@@ -63,15 +63,15 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             double backRightPower = (y + x - rx) / denominator;
 
             while(gamepad1.dpad_left) {
-                robot.DriveLeftFront.setPower(-0.5);
-                robot.DriveRightFront.setPower(0.5);
+                robot.DriveLeftFront.setPower(0.5);
+                robot.DriveRightFront.setPower(-0.5);
                 robot.DriveLeftBack.setPower(0.5);
                 robot.DriveRightBack.setPower(-0.5);
             }
 
             while(gamepad1.dpad_right) {
-                robot.DriveLeftFront.setPower(0.5);
-                robot.DriveRightFront.setPower(-0.5);
+                robot.DriveLeftFront.setPower(-0.5);
+                robot.DriveRightFront.setPower(0.5);
                 robot.DriveLeftBack.setPower(-0.5);
                 robot.DriveRightBack.setPower(0.5);
             }

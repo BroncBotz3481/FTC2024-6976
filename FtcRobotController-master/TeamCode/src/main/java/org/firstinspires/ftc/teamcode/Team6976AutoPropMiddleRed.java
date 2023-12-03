@@ -16,7 +16,7 @@ public class Team6976AutoPropMiddleRed extends LinearOpMode {
     public void runOpMode() {
         robot.Map(hardwareMap);
         waitForStart();
-        moveForward(0.4 , 1800);
+        moveForward(0.4 , 1400);
 
 
 

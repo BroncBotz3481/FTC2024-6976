@@ -62,19 +62,19 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             double frontRightPower = (y - x - rx) / denominator;
             double backRightPower = (y + x - rx) / denominator;
 
-            while(gamepad1.dpad_left) {
-                robot.DriveLeftFront.setPower(0.5);
-                robot.DriveRightFront.setPower(-0.5);
-                robot.DriveLeftBack.setPower(0.5);
-                robot.DriveRightBack.setPower(-0.5);
-            }
-
-            while(gamepad1.dpad_right) {
-                robot.DriveLeftFront.setPower(-0.5);
-                robot.DriveRightFront.setPower(0.5);
-                robot.DriveLeftBack.setPower(-0.5);
-                robot.DriveRightBack.setPower(0.5);
-            }
+//            while(gamepad1.dpad_left) {
+//                robot.DriveLeftFront.setPower(0.5);
+//                robot.DriveRightFront.setPower(-0.5);
+//                robot.DriveLeftBack.setPower(0.5);
+//                robot.DriveRightBack.setPower(-0.5);
+//            }
+//
+//            while(gamepad1.dpad_right) {
+//                robot.DriveLeftFront.setPower(-0.5);
+//                robot.DriveRightFront.setPower(0.5);
+//                robot.DriveLeftBack.setPower(-0.5);
+//                robot.DriveRightBack.setPower(0.5);
+//            }
 
             telemetry.addData("RightFront", robot.DriveRightFront.getCurrentPosition());
             telemetry.addData("RightBack", robot.DriveRightBack.getCurrentPosition());
@@ -91,39 +91,39 @@ public class Team6976TeleOp2024 extends LinearOpMode {
 
 
             boolean ArmSlow = gamepad2.x;
-            double mag2 = ArmSlow ? 0.45 : 0.6;
+            double mag2 = ArmSlow ? 0.45 : 1;
             boolean ArmSuperSlow = gamepad2.y;
             double mag3 = ArmSuperSlow ? 0.4 : 1;
             boolean ArmFast = gamepad2.b;
-            double mag4 = ArmFast ? 0.8 : 1;
+            double mag4 = ArmFast ? 0.8 : 0.55;
 
             double Arm1 = gamepad2.right_stick_y;
             double Arm2b = gamepad2.left_stick_y;
             double Arm2 = gamepad2.left_stick_y;
 
-            while(gamepad2.dpad_left){
-                robot.DriveLeftFront.setPower(0.3);
-                robot.DriveRightFront.setPower(-0.3);
-                robot.DriveLeftBack.setPower(0.3);
-                robot.DriveRightBack.setPower(-0.3);
+            while(gamepad1.dpad_left){
+                robot.DriveLeftFront.setPower(0.3 * mag);
+                robot.DriveRightFront.setPower(-0.3 * mag);
+                robot.DriveLeftBack.setPower(0.3 * mag);
+                robot.DriveRightBack.setPower(-0.3 * mag);
             }
-            while(gamepad2.dpad_right){
-                robot.DriveLeftFront.setPower(-0.3);
-                robot.DriveRightFront.setPower(0.3);
-                robot.DriveLeftBack.setPower(-0.3);
-                robot.DriveRightBack.setPower(0.3);
+            while(gamepad1.dpad_right){
+                robot.DriveLeftFront.setPower(-0.3 * mag);
+                robot.DriveRightFront.setPower(0.3 * mag);
+                robot.DriveLeftBack.setPower(-0.3 * mag);
+                robot.DriveRightBack.setPower(0.3 * mag);
             }
-            while(gamepad2.dpad_down){
-                robot.DriveLeftFront.setPower(-0.3);
-                robot.DriveRightFront.setPower(-0.3);
-                robot.DriveLeftBack.setPower(0.3);
-                robot.DriveRightBack.setPower(0.3);
+            while(gamepad1.dpad_down){
+                robot.DriveLeftFront.setPower(0.3 * mag);
+                robot.DriveRightFront.setPower(0.3 * mag);
+                robot.DriveLeftBack.setPower(-0.3 * mag);
+                robot.DriveRightBack.setPower(-0.3 * mag);
             }
-            while(gamepad2.dpad_up){
-                robot.DriveLeftFront.setPower(0.3);
-                robot.DriveRightFront.setPower(0.3);
-                robot.DriveLeftBack.setPower(-0.3);
-                robot.DriveRightBack.setPower(-0.3);
+            while(gamepad1.dpad_up){
+                robot.DriveLeftFront.setPower(-0.3 * mag);
+                robot.DriveRightFront.setPower(-0.3 * mag);
+                robot.DriveLeftBack.setPower(0.3 * mag);
+                robot.DriveRightBack.setPower(0.3 * mag);
             }
 
             robot.Arm1.setPower(Arm1 * mag2 * mag3 * mag4);

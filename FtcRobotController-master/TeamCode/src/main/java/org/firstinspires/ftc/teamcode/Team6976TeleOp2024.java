@@ -16,6 +16,7 @@ public class Team6976TeleOp2024 extends LinearOpMode {
         robot.Map(hardwareMap);
         telemetry.addData("Say", "TeleOp Starting");
         telemetry.update();
+
         robot.DriveRightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.DriveRightFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.DriveLeftBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -26,7 +27,7 @@ public class Team6976TeleOp2024 extends LinearOpMode {
         robot.DriveLeftFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.Intake.setPosition(0.3);
         robot.Intake2.setPosition(0);
-
+        
         int count = 0;
         //robot.Lights.setPattern(RevBlinkinLedDriver.BlinkinPattern.BEATS_PER_MINUTE_PARTY_PALETTE);
         waitForStart();

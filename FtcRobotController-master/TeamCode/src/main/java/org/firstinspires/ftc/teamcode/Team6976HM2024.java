@@ -96,7 +96,7 @@ public class Team6976HM2024 {
 
         //Arm = hwMap.get(DcMotor.class, "Arm");
 
-//        ColorSensor = hwMap.get(NormalizedColorSensor.class, "sensor");
+       ColorSensor = hwMap.get(NormalizedColorSensor.class, "sensor");
 
     }
 }

@@ -155,6 +155,10 @@ public class Team6976TeleOp2024 extends LinearOpMode {
 //
 //            }
 
+            if (gamepad2.a) { //Arm Brake
+                robot.Arm2.setPower(0);
+                robot.Arm2b.setPower(0);
+            }
             //One side intaked controls
             if (gamepad2.right_bumper) { //Opened
                 robot.Intake.setPosition(0.1);

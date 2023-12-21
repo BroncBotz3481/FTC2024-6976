@@ -159,7 +159,7 @@ public class Team6976TeleOp2024 extends LinearOpMode {
                 robot.Arm2b.setPower(0);
             }
 
-            while (gamepad2.right_bumper) && (gamepad2.left_bumper) && (gamepad2.b) { //dw abt it
+            while (gamepad1.right_bumper && gamepad1.left_bumper) { //dw abt it
                 robot.DriveLeftFront.setPower(0);
                 robot.DriveRightFront.setPower(0);
                 robot.DriveLeftBack.setPower(0);

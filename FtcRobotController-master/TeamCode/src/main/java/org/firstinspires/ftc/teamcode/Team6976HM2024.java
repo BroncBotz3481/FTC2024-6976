@@ -30,6 +30,8 @@ public class Team6976HM2024 {
 
     public Servo Intake2 = null;
 
+    public Servo Drone = null;
+
     public NormalizedColorSensor ColorSensor = null;
 
 
@@ -93,6 +95,8 @@ public class Team6976HM2024 {
         Intake = hwMap.get(Servo.class, "Intake");
 
         Intake2 = hwMap.get(Servo.class, "Intake2");
+
+        Drone = hwMap.get(Servo.class, "Drone");
 
         //Arm = hwMap.get(DcMotor.class, "Arm");
 

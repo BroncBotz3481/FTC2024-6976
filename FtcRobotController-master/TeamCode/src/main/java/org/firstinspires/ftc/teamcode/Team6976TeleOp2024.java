@@ -160,10 +160,8 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             }
 
             while (((gamepad2.right_bumper && gamepad2.left_bumper) && gamepad2.b)) { //dw abt it
-                robot.DriveLeftFront.setPower(0);
-                robot.DriveRightFront.setPower(0);
-                robot.DriveLeftBack.setPower(0);
-                robot.DriveRightBack.setPower(0);
+                robot.Arm2.setPower(1);
+                robot.Arm2b.setPower(1);
             }
             //One side intaked controls
             if (gamepad2.right_bumper) { //Opened

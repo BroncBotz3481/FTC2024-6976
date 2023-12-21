@@ -44,7 +44,7 @@ public class Team6976TeleOp2024 extends LinearOpMode {
 
 
             double y = gamepad1.left_stick_y * -1; // Remember, this is reversed!
-            double x = -gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
+            double x = -gamepad1.left_stick_x * -1.1; // Counteract imperfect strafing
             double rx = -gamepad1.right_stick_x * -1;
 
           /*  if (robot.Touched.isPressed()) {
@@ -96,6 +96,8 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             double mag3 = ArmSuperSlow ? 0.4 : 1;
             boolean ArmFast = gamepad2.b;
             double mag4 = ArmFast ? 0.8 : 0.55;
+            boolean ArmMax = (((gamepad2.right_bumper && gamepad2.left_bumper) && gamepad2.b));
+            double mag5 = ArmMax ? 10 : 1; //10 is to max out power to 1 regardless of current power setting
 
             double Arm1 = gamepad2.right_stick_y;
             double Arm2b = gamepad2.left_stick_y;
@@ -126,9 +128,9 @@ public class Team6976TeleOp2024 extends LinearOpMode {
                 robot.DriveRightBack.setPower(0.3 * mag);
             }
 
-            robot.Arm1.setPower(Arm1 * mag2 * mag3 * mag4);
-            robot.Arm2b.setPower(Arm2b * mag2 * mag3 * mag4);
-            robot.Arm2.setPower(Arm2 *mag2 * mag3 * mag4);
+            robot.Arm1.setPower(Arm1 * mag2 * mag3 * mag4 * mag5);
+            robot.Arm2b.setPower(Arm2b * mag2 * mag3 * mag4 * mag5);
+            robot.Arm2.setPower(Arm2 *mag2 * mag3 * mag4 * mag5);
              
             // left bumper is open, right bumper is close
 //            while (gamepad2.right_bumper) {
@@ -154,16 +156,16 @@ public class Team6976TeleOp2024 extends LinearOpMode {
 //
 //            }
 
-            if (gamepad2.a) { //Arm Brake
+            while (gamepad2.a) { //Arm Brake
                 robot.Arm2.setPower(0);
                 robot.Arm2b.setPower(0);
             }
 
-            while (((gamepad2.right_bumper && gamepad2.left_bumper) && gamepad2.b)) { //dw abt it
-                robot.Arm2.setPower(1);
-                robot.Arm2b.setPower(1);
+//            while (((gamepad2.right_bumper && gamepad2.left_bumper) && gamepad2.b)) { //Max power for hanging
+//                robot.Arm2.setPower(1);
+//                robot.Arm2b.setPower(1);
             }
-            //One side intaked controls
+            //One side intake controls
             if (gamepad2.right_bumper) { //Opened
                 robot.Intake.setPosition(0.1);
                 robot.Intake2.setPosition(0.1);
@@ -187,4 +189,3 @@ public class Team6976TeleOp2024 extends LinearOpMode {
 //            }
         }
     }
-}

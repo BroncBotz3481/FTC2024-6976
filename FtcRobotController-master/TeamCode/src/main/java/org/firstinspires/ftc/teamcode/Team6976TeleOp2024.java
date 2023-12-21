@@ -37,16 +37,16 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             boolean speedslow = gamepad1.right_bumper;
             double mag = speedslow ? 0.5 : 1.0;
 
-            /* If you want a deadzone on your controller
+            // If you want a deadzone on your controller
             double y = (Math.abs(gamepad1.left_stick_y) > 0.1 ? gamepad1.left_stick_y : 0); // Remember, this is reversed!
             double x = -(Math.abs(gamepad1.left_stick_x) > 0.1 ? gamepad1.left_stick_x : 0) * 1.1; // Counteract imperfect strafing
             double rx = -gamepad1.right_stick_x;
-             */
 
 
-            double y = gamepad1.left_stick_y * -1; // Remember, this is reversed!
-            double x = -gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
-            double rx = -gamepad1.right_stick_x * -1;
+
+//            double y = gamepad1.left_stick_y * -1; // Remember, this is reversed!
+//            double x = -gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
+//            double rx = -gamepad1.right_stick_x * -1;
 
           /*  if (robot.Touched.isPressed()) {
                 telemetry.addData("Touch", robot.Touched.isPressed());

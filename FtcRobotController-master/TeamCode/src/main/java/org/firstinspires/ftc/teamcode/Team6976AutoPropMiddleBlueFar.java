@@ -2,11 +2,10 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@Autonomous (name="Team6976AutoPropMiddleRed", group="6976")
-public class Team6976AutoPropMiddleRed extends LinearOpMode {
+@Autonomous (name="Team6976AutoPropMiddleBlueFar", group="6976")
+public class Team6976AutoPropMiddleBlueFar extends LinearOpMode {
 
     Team6976HM2024 robot = new Team6976HM2024();
     ElapsedTime Time = new ElapsedTime();
@@ -18,10 +17,11 @@ public class Team6976AutoPropMiddleRed extends LinearOpMode {
         robot.Intake.setPosition(0.3);
         robot.Intake2.setPosition(0);
         waitForStart();
-        moveForward(0.4 , 1335); //moves forward
-        moveBackward(0.4,1300); //backwards
-        moveRight(0.5,2200);
-        moveForward(0.4,500);
+
+        moveForward(0.4 , 1425); //moves forward
+
+
+
 
 
 
@@ -78,11 +78,11 @@ public class Team6976AutoPropMiddleRed extends LinearOpMode {
         robot.DriveRightBack.setPower(0);
         robot.DriveLeftBack.setPower(0);
     }
-    public void moveRight (double power, int time){
-        robot.DriveRightFront.setPower(-power);
-        robot.DriveLeftFront.setPower(power);
-        robot.DriveRightBack.setPower(-power);
-        robot.DriveLeftBack.setPower(power);
+    public void moveLeft (double power, int time){
+        robot.DriveRightFront.setPower(power);
+        robot.DriveLeftFront.setPower(-power);
+        robot.DriveRightBack.setPower(power);
+        robot.DriveLeftBack.setPower(-power);
         sleep(time);
         robot.DriveRightFront.setPower(0);
         robot.DriveLeftFront.setPower(0);
@@ -97,4 +97,5 @@ public class Team6976AutoPropMiddleRed extends LinearOpMode {
         robot.Arm2b.setPower(0);
 
     }
+
 }

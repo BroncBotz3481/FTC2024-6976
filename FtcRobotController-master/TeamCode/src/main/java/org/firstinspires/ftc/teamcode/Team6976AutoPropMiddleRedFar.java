@@ -2,11 +2,10 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@Autonomous (name="Team6976AutoPropMiddleRed", group="6976")
-public class Team6976AutoPropMiddleRed extends LinearOpMode {
+@Autonomous (name="Team6976AutoPropMiddleRedFar", group="6976")
+public class Team6976AutoPropMiddleRedFar extends LinearOpMode {
 
     Team6976HM2024 robot = new Team6976HM2024();
     ElapsedTime Time = new ElapsedTime();
@@ -17,11 +16,12 @@ public class Team6976AutoPropMiddleRed extends LinearOpMode {
         robot.Map(hardwareMap);
         robot.Intake.setPosition(0.3);
         robot.Intake2.setPosition(0);
+
         waitForStart();
-        moveForward(0.4 , 1335); //moves forward
-        moveBackward(0.4,1300); //backwards
-        moveRight(0.5,2200);
-        moveForward(0.4,500);
+        moveForward(0.4 , 1425);
+
+
+
 
 
 

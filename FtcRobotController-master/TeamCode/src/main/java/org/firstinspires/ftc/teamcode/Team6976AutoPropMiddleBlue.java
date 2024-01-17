@@ -14,11 +14,15 @@ public class Team6976AutoPropMiddleBlue extends LinearOpMode {
     @Override
     public void runOpMode() {
         robot.Map(hardwareMap);
-        robot.Intake.setPosition(0.1);
-        robot.Intake2.setPosition(0.1);
+        robot.Intake.setPosition(0.3);
+        robot.Intake2.setPosition(0);
         waitForStart();
 
-        moveForward(0.4 , 1400); //moves forward
+        moveForward(0.4 , 1335); //moves forward
+        moveBackward(0.4,1300); //backwards
+        moveLeft(0.5,2200);
+        moveForward(0.4,500);
+
 
 
 
@@ -77,10 +81,10 @@ public class Team6976AutoPropMiddleBlue extends LinearOpMode {
         robot.DriveLeftBack.setPower(0);
     }
     public void moveLeft (double power, int time){
-        robot.DriveRightFront.setPower(-power);
-        robot.DriveLeftFront.setPower(power);
-        robot.DriveRightBack.setPower(-power);
-        robot.DriveLeftBack.setPower(power);
+        robot.DriveRightFront.setPower(power);
+        robot.DriveLeftFront.setPower(-power);
+        robot.DriveRightBack.setPower(power);
+        robot.DriveLeftBack.setPower(-power);
         sleep(time);
         robot.DriveRightFront.setPower(0);
         robot.DriveLeftFront.setPower(0);

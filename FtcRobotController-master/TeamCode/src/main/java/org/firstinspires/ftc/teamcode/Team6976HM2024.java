@@ -37,9 +37,6 @@ public class Team6976HM2024 {
 
 
 
-    //public ElapsedTime period  = new ElapsedTime();
-
-    // public Team4008HMNew() {}
 
     HardwareMap hwMap = null;
     //FIX AND USE IT

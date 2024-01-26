@@ -37,8 +37,8 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             double mag = speedslow ? 0.5 : 1.0;
 
             /* If you want a deadzone on your controller
-            double y = (Math.abs(gamepad1.left_stick_y) > 0.1 ? gamepad1.left_stick_y : 0); // Remember, this is reversed!
-            double x = -(Math.abs(gamepad1.left_stick_x) > 0.1 ? gamepad1.left_stick_x : 0) * 1.1; // Counteract imperfect strafing
+            double y = (Math.abs(gamepad1.left_stick_y) > 0.1 ? gamepad1.left_stick_y : 1); // Remember, this is reversed!
+            double x = -(Math.abs(gamepad1.left_stick_x) > 0.1 ? gamepad1.left_stick_x : 1) * 1.1; // Counteract imperfect strafing
             double rx = -gamepad1.right_stick_x;
              */
 
@@ -99,7 +99,7 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             double mag4 = ArmFast ? 0.6 : 0.5;
             boolean ArmMax = (((gamepad2.right_bumper && gamepad2.left_bumper) && gamepad2.b));
             double mag5 = ArmMax ? 10 : 1; //10 is to max out power to 1 regardless of current power setting
-                // Multipliers on arm contrnl the limit of the output states
+                // Multipliers on arm control the limit of the output states
             double Arm1 = gamepad2.right_stick_y;
             double Arm2b = gamepad2.left_stick_y;
             double Arm2 = gamepad2.left_stick_y;
@@ -192,3 +192,35 @@ public class Team6976TeleOp2024 extends LinearOpMode {
 //            }
         }
     }
+
+    /*
+
+
+
+         ////\\         ////\\\
+        o////\0oo////oooo////\0oo
+         ////\\ ////\\\  ////\\\
+         ////\\  TTTT\\\ ////\\\
+         ////\\   TTTT\\\////\\\
+         ////\\    TTTT\\////\\\
+         ////\\     TTTT\////\\\
+      ___////\\______TTTT////\\\____     ____
+     ///////////////////////////////\\\\^   ^--^
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     */

@@ -18,12 +18,22 @@ public class Team6976AutoPropMiddleRedFar extends LinearOpMode {
         robot.Intake2.setPosition(0);
 
         waitForStart();
-        moveForward(0.4 , 1425);
+        moveForward(0.4 , 1335); //moves forward
+        moveBackward(0.4,100); //backwards //moves forward
+        turnRight(0.4, 500);
+        wait(1000);
+        moveForward(0.4, 3000);
 
 
-
-
-
+        ///////////////////////////////////////////////////////////////
+        ///////// ////////// /////////////////////////////////////////
+        ///////   ////////   /////////////////////////////////////////
+        //////    //////     ////////////////////////////////////////
+        ////  __      __        ///////////////////////////////////////
+        ///   |0|    |0|     /////////////-----////////////////////////
+        ///      |--|       ---////////     //////////////////////////
+        ////     |==|       -----////   ////////////////////////////
+        ////                      /   //////////////////////////////
 
 
 
@@ -95,6 +105,27 @@ public class Team6976AutoPropMiddleRedFar extends LinearOpMode {
         sleep(time);
         robot.Arm2.setPower(0);
         robot.Arm2b.setPower(0);
+
+    }
+    public void turnRight (double power, int time){ // 90 degrees
+
+        robot.DriveRightFront.setPower(-power);
+        robot.DriveLeftFront.setPower(power);
+        robot.DriveRightBack.setPower(power);
+        robot.DriveLeftBack.setPower(-power);
+        sleep(time);
+        robot.DriveRightFront.setPower(0);
+        robot.DriveLeftFront.setPower(0);
+        robot.DriveRightBack.setPower(0);
+        robot.DriveLeftBack.setPower(0);
+
+    }
+    public void wait (int time){
+        sleep(time);
+        robot.DriveRightFront.setPower(0);
+        robot.DriveLeftFront.setPower(0);
+        robot.DriveRightBack.setPower(0);
+        robot.DriveLeftBack.setPower(0);
 
     }
 }

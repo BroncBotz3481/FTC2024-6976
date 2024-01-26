@@ -16,6 +16,8 @@ public class Team6976Auto1ParkingBlue extends LinearOpMode {
     public void runOpMode() {
         robot.Map(hardwareMap);
         waitForStart();
+                    moveForward(0.4 , 1335); //moves forward
+                    moveBackward(0.4,1300); //backwards
 
         //Moves forward
         double distance = 22; //Distance in inches to strafe
@@ -23,6 +25,7 @@ public class Team6976Auto1ParkingBlue extends LinearOpMode {
         robot.DriveRightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.DriveRightFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         double tick = (distance * 537.7)/(4 * Math.PI);
+
         Time.reset();
         robot.DriveRightFront.setPower(multy); //Setting the power to (multy) variable created above (+multy for Blue side)
         robot.DriveLeftFront.setPower(-multy); //Link to Wheel Direction Mapping Below
@@ -38,5 +41,27 @@ public class Team6976Auto1ParkingBlue extends LinearOpMode {
         robot.DriveLeftBack.setPower(0);
         robot.DriveRightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER); //Stops and resets the encoder to the 0 value for next use
         robot.DriveRightFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+    }
+    public void moveForward (double power, int time){
+        robot.DriveRightFront.setPower(power);
+        robot.DriveLeftFront.setPower(power);
+        robot.DriveRightBack.setPower(-power);
+        robot.DriveLeftBack.setPower(-power);
+        sleep(time);
+        robot.DriveRightFront.setPower(0);
+        robot.DriveLeftFront.setPower(0);
+        robot.DriveRightBack.setPower(0);
+        robot.DriveLeftBack.setPower(0);
+    }
+    public void moveBackward (double power, int time){
+        robot.DriveRightFront.setPower(-power);
+        robot.DriveLeftFront.setPower(-power);
+        robot.DriveRightBack.setPower(power);
+        robot.DriveLeftBack.setPower(power);
+        sleep(time);
+        robot.DriveRightFront.setPower(0);
+        robot.DriveLeftFront.setPower(0);
+        robot.DriveRightBack.setPower(0);
+        robot.DriveLeftBack.setPower(0);
     }
 }

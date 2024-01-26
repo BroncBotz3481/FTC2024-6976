@@ -89,7 +89,8 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             robot.DriveRightBack.setPower(backRightPower * -mag);
 
             //Control Code
-
+            //If button press, change what is multiplied to the speed.
+            //The otherwise part of the if statement must stay as one to not disrupt other multipliers
             boolean ArmSlow = gamepad2.x;
             double mag2 = ArmSlow ? 0.55 : 1;
             boolean ArmSuperSlow = gamepad2.y;
@@ -98,10 +99,14 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             double mag4 = ArmFast ? 0.6 : 0.5;
             boolean ArmMax = (((gamepad2.right_bumper && gamepad2.left_bumper) && gamepad2.b));
             double mag5 = ArmMax ? 10 : 1; //10 is to max out power to 1 regardless of current power setting
-
+                // Multipliers on arm contrnl the limit of the output states
             double Arm1 = gamepad2.right_stick_y;
             double Arm2b = gamepad2.left_stick_y;
             double Arm2 = gamepad2.left_stick_y;
+
+            robot.Arm1.setPower(Arm1 * mag2 * mag3 * mag4 * mag5);
+            robot.Arm2b.setPower(Arm2b * mag2 * mag3 * mag4 * mag5);
+            robot.Arm2.setPower(Arm2 *mag2 * mag3 * mag4 * mag5);
 
             if (gamepad2.right_trigger > 0.2) { //closed
                 robot.Intake.setPosition(0.2);
@@ -138,9 +143,7 @@ public class Team6976TeleOp2024 extends LinearOpMode {
                 robot.DriveRightBack.setPower(0.3 * mag);
             }
 
-            robot.Arm1.setPower(Arm1 * mag2 * mag3 * mag4 * mag5);
-            robot.Arm2b.setPower(Arm2b * mag2 * mag3 * mag4 * mag5);
-            robot.Arm2.setPower(Arm2 *mag2 * mag3 * mag4 * mag5);
+
              
             // left bumper is open, right bumper is close
 //            while (gamepad2.right_bumper) {

@@ -101,22 +101,23 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             double mag5 = ArmMax ? 10 : 1; //10 is to max out power to 1 regardless of current power setting
                 // Multipliers on arm control the limit of the output states
             double Arm1 = gamepad2.right_stick_y;
-            double Arm2b = gamepad2.left_stick_y;
-            double Arm2 = gamepad2.left_stick_y;
+            double Arm2b =- gamepad2.left_stick_y;
+            double Arm2 = -gamepad2.left_stick_y;
 
             robot.Arm1.setPower(Arm1 * mag2 * mag3 * mag4 * mag5);
             robot.Arm2b.setPower(Arm2b * mag2 * mag3 * mag4 * mag5);
             robot.Arm2.setPower(Arm2 *mag2 * mag3 * mag4 * mag5);
 
-            if (gamepad2.right_trigger > 0.2) { //closed
-                robot.Intake.setPosition(0.2);
-                robot.Intake2.setPosition(0.1);
+            if (gamepad2.right_trigger > 0.2) { //open
+
+                robot.Intake.setPosition(0.05);
+                robot.Intake2.setPosition(.25 );
             }
 
 
             if (gamepad2.left_trigger > 0.2) { //Closed
-                robot.Intake2.setPosition(0);
-                robot.Intake.setPosition(0.3);
+                robot.Intake.setPosition(0.2);
+                robot.Intake2.setPosition(0.1);
             }
             while(gamepad1.dpad_right){
                 robot.DriveLeftFront.setPower(0.3 * mag);

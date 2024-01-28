@@ -20,7 +20,7 @@ public class Team6976AutoPropMiddleBlueFar extends LinearOpMode {
 
         moveForward(0.4 , 1335); //moves forward
         moveBackward(0.4,100); //backwards //moves forward
-        turnLeft(0.4, 500);
+        turnLeft(0.4, 1000);
         wait(1000);
         moveForward(0.4, 3000);
 

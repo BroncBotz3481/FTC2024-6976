@@ -97,7 +97,7 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             boolean ArmSuperSlow = gamepad2.y;
             double mag3 = ArmSuperSlow ? .5 : 1;
             boolean ArmFast = gamepad2.b;
-            double mag4 = ArmFast ? 0.6 : 0.5;
+            double mag4 = ArmFast ? 0.7 : 0.6;
             boolean ArmMax = (((gamepad2.right_bumper && gamepad2.left_bumper) && gamepad2.b));
             double mag5 = ArmMax ? 10 : 1; //10 is to max out power to 1 regardless of current power setting
                 // Multipliers on arm control the limit of the output states
@@ -109,16 +109,16 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             robot.Arm2b.setPower(Arm2b * mag2 * mag3 * mag4 * mag5);
             robot.Arm2.setPower(Arm2 *mag2 * mag3 * mag4 * mag5);
 
-            if (gamepad2.right_trigger > 0.2) { //open
+            if (gamepad2.left_trigger > 0.2) { //open
 
-                robot.Intake.setPosition(0.05);
-                robot.Intake2.setPosition(.25 );
+                robot.Intake.setPosition(0.35);
+                robot.Intake2.setPosition(.2 );
             }
 
 
-            if (gamepad2.left_trigger > 0.2) { //Closed
-                robot.Intake.setPosition(0.2);
-                robot.Intake2.setPosition(0.1);
+            if (gamepad2.right_trigger > 0.2) { //Closed
+                robot.Intake.setPosition(0);
+                robot.Intake2.setPosition(0.3);
             }
             while(gamepad1.dpad_right){
                 robot.DriveLeftFront.setPower(0.3 * mag);
@@ -176,7 +176,7 @@ public class Team6976TeleOp2024 extends LinearOpMode {
                 robot.Arm2b.setPower(0);
             }
             if (gamepad1.x){
-                robot.Drone.setPosition(1);
+                robot.Drone.setPosition(0);
             }
 
 //            while (((gamepad2.right_bumper && gamepad2.left_bumper) && gamepad2.b)) { //Max power for hanging

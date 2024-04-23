@@ -64,19 +64,6 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             double frontRightPower = (y - x - rx) / denominator;
             double backRightPower = (y + x - rx) / denominator;
 
-//            while(gamepad1.dpad_left) {
-//                robot.DriveLeftFront.setPower(0.5);
-//                robot.DriveRightFront.setPower(-0.5);
-//                robot.DriveLeftBack.setPower(0.5);
-//                robot.DriveRightBack.setPower(-0.5);
-//            }
-//
-//            while(gamepad1.dpad_right) {
-//                robot.DriveLeftFront.setPower(-0.5);
-//                robot.DriveRightFront.setPower(0.5);
-//                robot.DriveLeftBack.setPower(-0.5);
-//                robot.DriveRightBack.setPower(0.5);
-//            }
 
             telemetry.addData("RightFront", robot.DriveRightFront.getCurrentPosition());
             telemetry.addData("RightBack", robot.DriveRightBack.getCurrentPosition());
@@ -146,31 +133,6 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             }
 
 
-             
-            // left bumper is open, right bumper is close
-//            while (gamepad2.right_bumper) {
-//                robot.Intake.setPosition(0);
-//                robot.Intake2.setPosition(0);
-//                System.out.println("intake open");
-//            }
-//            while (gamepad2.left_bumper){
-//                robot.Intake2.setPosition(0.7);
-//                robot.Intake.setPosition(-0.7);
-//                System.out.println("intake close");
-//            }
-
-//            if (gamepad2.left_bumper) {
-//                robot.Intake.setPosition(0.3);
-//                robot.Intake2.setPosition(0);
-//
-//            }
-//
-//            if (gamepad2.right_bumper) {
-//                robot.Intake.setPosition(0.1);
-//                robot.Intake2.setPosition(0.1);
-//
-//            }
-
             if (gamepad2.a) { //Arm Brake
                 robot.Arm2.setPower(0);
                 robot.Arm2b.setPower(0);
@@ -179,22 +141,8 @@ public class Team6976TeleOp2024 extends LinearOpMode {
                 robot.Drone.setPosition(0);
             }
 
-//            while (((gamepad2.right_bumper && gamepad2.left_bumper) && gamepad2.b)) { //Max power for hanging
-//                robot.Arm2.setPower(1);
-//                robot.Arm2b.setPower(1);
             }
-            //One side intake controls
 
-
-//            if(gamepad2.y){
-//                robot.Arm1.setPower(.9);
-//            }
-//            else if (gamepad2.x){
-//                robot.Arm1.setPower(-1);
-//            }
-//            else {
-//                robot.Arm1.setPower(0);
-//            }
         }
     }
 

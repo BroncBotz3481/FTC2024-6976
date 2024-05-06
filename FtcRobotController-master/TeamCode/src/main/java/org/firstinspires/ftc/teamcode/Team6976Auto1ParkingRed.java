@@ -17,7 +17,7 @@ public class Team6976Auto1ParkingRed extends LinearOpMode {
         waitForStart();
 
         //Go foward
-        double distance = 22; //Distance in inches to strafe
+        double distance = 36; //Distance in inches to strafe
         multy = 0.5; //Power setting to all motors
         robot.DriveLeftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.DriveLeftFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
@@ -42,7 +42,7 @@ public class Team6976Auto1ParkingRed extends LinearOpMode {
         robot.DriveLeftFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         sleep(1000);
 
-        double backDistance = 22;
+        double backDistance = 36;
         robot.DriveLeftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.DriveLeftFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 

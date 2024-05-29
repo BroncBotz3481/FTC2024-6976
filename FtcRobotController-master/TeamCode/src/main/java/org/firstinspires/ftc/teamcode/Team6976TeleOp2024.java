@@ -25,9 +25,7 @@ public class Team6976TeleOp2024 extends LinearOpMode {
         robot.DriveRightBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.DriveLeftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.DriveLeftFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        robot.Intake.setPosition(0.3);
-        robot.Intake2.setPosition(0);
-        //robot.Drone.setPosition(0);
+
         
         int count = 0;
         //robot.Lights.setPattern(RevBlinkinLedDriver.BlinkinPattern.BEATS_PER_MINUTE_PARTY_PALETTE);
@@ -76,9 +74,42 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             robot.DriveRightFront.setPower(frontRightPower * mag);
             robot.DriveRightBack.setPower(backRightPower * -mag);
 
+            while(gamepad1.dpad_right){
+                robot.DriveLeftFront.setPower(0.5 * mag);
+                robot.DriveRightFront.setPower(-0.5 * mag);
+                robot.DriveLeftBack.setPower(0.5 * mag);
+                robot.DriveRightBack.setPower(-0.5 * mag);
+            }
+            while(gamepad1.dpad_left){
+                robot.DriveLeftFront.setPower(-0.5 * mag);
+                robot.DriveRightFront.setPower(0.5 * mag);
+                robot.DriveLeftBack.setPower(-0.5 * mag);
+                robot.DriveRightBack.setPower(0.5 * mag);
+            }
+            while(gamepad1.dpad_up){
+                robot.DriveLeftFront.setPower(0.5 * mag);
+                robot.DriveRightFront.setPower(0.5 * mag);
+                robot.DriveLeftBack.setPower(-0.5 * mag);
+                robot.DriveRightBack.setPower(-0.5 * mag);
+            }
+            while(gamepad1.dpad_down){
+                robot.DriveLeftFront.setPower(-0.5 * mag);
+                robot.DriveRightFront.setPower(-0.5 * mag);
+                robot.DriveLeftBack.setPower(0.5 * mag);
+                robot.DriveRightBack.setPower(0.5 * mag);
+            }
+
+            double armPos = gamepad2.left_stick_y;
+            robot.lArmServo.setPower(armPos * 0.4);
+            robot.rArmServo.setPower(-armPos * 0.4);
+
+
+
+
             //Control Code
             //If button press, change what is multiplied to the speed.
             //The otherwise part of the if statement must stay as one to not disrupt other multipliers
+/* Old arm code
             boolean ArmSlow = gamepad2.x;
             double mag2 = ArmSlow ? 0.55 : 1;
             boolean ArmSuperSlow = gamepad2.y;
@@ -95,51 +126,29 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             robot.Arm1.setPower(Arm1 * mag2 * mag3 * mag4 * mag5);
             robot.Arm2b.setPower(Arm2b * mag2 * mag3 * mag4 * mag5);
             robot.Arm2.setPower(Arm2 *mag2 * mag3 * mag4 * mag5);
+*/
 
-            if (gamepad2.left_trigger > 0.2) { //open
+//            if (gamepad2.left_trigger > 0.2) { //open
+//
+//                robot.Intake.setPosition(0.35);
+//                robot.Intake2.setPosition(.2 );
+//            }
+//
+//
+//            if (gamepad2.right_trigger > 0.2) { //Closed
+//                robot.Intake.setPosition(0);
+//                robot.Intake2.setPosition(0.3);
+//            }
 
-                robot.Intake.setPosition(0.35);
-                robot.Intake2.setPosition(.2 );
-            }
-
-
-            if (gamepad2.right_trigger > 0.2) { //Closed
-                robot.Intake.setPosition(0);
-                robot.Intake2.setPosition(0.3);
-            }
-            while(gamepad1.dpad_right){
-                robot.DriveLeftFront.setPower(0.3 * mag);
-                robot.DriveRightFront.setPower(-0.3 * mag);
-                robot.DriveLeftBack.setPower(0.3 * mag);
-                robot.DriveRightBack.setPower(-0.3 * mag);
-            }
-            while(gamepad1.dpad_left){
-                robot.DriveLeftFront.setPower(-0.3 * mag);
-                robot.DriveRightFront.setPower(0.3 * mag);
-                robot.DriveLeftBack.setPower(-0.3 * mag);
-                robot.DriveRightBack.setPower(0.3 * mag);
-            }
-            while(gamepad1.dpad_up){
-                robot.DriveLeftFront.setPower(0.3 * mag);
-                robot.DriveRightFront.setPower(0.3 * mag);
-                robot.DriveLeftBack.setPower(-0.3 * mag);
-                robot.DriveRightBack.setPower(-0.3 * mag);
-            }
-            while(gamepad1.dpad_down){
-                robot.DriveLeftFront.setPower(-0.3 * mag);
-                robot.DriveRightFront.setPower(-0.3 * mag);
-                robot.DriveLeftBack.setPower(0.3 * mag);
-                robot.DriveRightBack.setPower(0.3 * mag);
-            }
-
-
-            if (gamepad2.a) { //Arm Brake
-                robot.Arm2.setPower(0);
-                robot.Arm2b.setPower(0);
-            }
-            if (gamepad1.x){
-                robot.Drone.setPosition(0);
-            }
+//
+//
+//            if (gamepad2.a) { //Arm Brake
+//                robot.Arm2.setPower(0);
+//                robot.Arm2b.setPower(0);
+//            }
+//            if (gamepad1.x){
+//                robot.Drone.setPosition(0);
+//            }
 
             }
 

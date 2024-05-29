@@ -26,11 +26,11 @@ public class Team6976HM2024 {
 
     public DcMotor Arm2b = null;
 
-    public Servo Intake = null;
+    public CRServo rArmServo = null;
 
-    public Servo Intake2 = null;
+    public CRServo lArmServo = null;
 
-    public Servo Drone = null;
+    public Servo claw = null;
 
 
     public NormalizedColorSensor ColorSensor = null;
@@ -90,11 +90,11 @@ public class Team6976HM2024 {
         Arm2b.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         Arm2b.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        Intake = hwMap.get(Servo.class, "Intake");
+        rArmServo = hwMap.get(CRServo.class, "Intake");
 
-        Intake2 = hwMap.get(Servo.class, "Intake2");
+        lArmServo = hwMap.get(CRServo.class, "Intake2");
 
-        Drone = hwMap.get(Servo.class, "Drone");
+        claw = hwMap.get(Servo.class, "Drone");
 
         //Arm = hwMap.get(DcMotor.class, "Arm");
 

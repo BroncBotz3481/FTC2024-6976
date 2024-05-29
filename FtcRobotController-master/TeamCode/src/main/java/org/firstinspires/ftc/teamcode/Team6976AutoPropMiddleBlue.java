@@ -14,8 +14,6 @@ public class Team6976AutoPropMiddleBlue extends LinearOpMode {
     @Override
     public void runOpMode() {
         robot.Map(hardwareMap);
-        robot.Intake.setPosition(0.3);
-        robot.Intake2.setPosition(0);
         waitForStart();
 
         moveForward(0.4 , 1650); //moves forward

@@ -60,4 +60,4 @@ public class Team6976AutoPropMiddleRed extends LinearOpMode {
         robot.DriveLeftBack.setPower(0);
     }
     }
-}
+

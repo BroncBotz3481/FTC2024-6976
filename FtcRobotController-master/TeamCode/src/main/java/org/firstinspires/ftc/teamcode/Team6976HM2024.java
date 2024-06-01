@@ -22,7 +22,7 @@ public class Team6976HM2024 {
 
     public DcMotor Arm1 = null;
 
-    public DcMotor Drone = null;
+    public DcMotor Drone1 = null;
 
     public DcMotor Arm2b = null;
 
@@ -80,10 +80,10 @@ public class Team6976HM2024 {
         Arm1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         Arm1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        Drone = hwMap.get(DcMotor.class, "Arm2");
-        Drone.setDirection(DcMotorSimple.Direction.REVERSE);
-        Drone.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        Drone.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        Drone1 = hwMap.get(DcMotor.class, "Drone1");
+        Drone1.setDirection(DcMotorSimple.Direction.REVERSE);
+        Drone1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        Drone1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         Arm2b = hwMap.get(DcMotor.class, "Arm2b");
         Arm2b.setDirection(DcMotorSimple.Direction.REVERSE);

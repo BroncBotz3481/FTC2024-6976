@@ -27,8 +27,8 @@ public class Team6976AutoPropMiddleRed extends LinearOpMode {
 
     }
     public void moveForward (double power, int time){
-        robot.DriveRightFront.setPower(power);
-        robot.DriveLeftFront.setPower(power);
+        robot.DriveRightFront.setPower(-power);
+        robot.DriveLeftFront.setPower(-power);
         robot.DriveRightBack.setPower(-power);
         robot.DriveLeftBack.setPower(-power);
         sleep(time);
@@ -38,8 +38,8 @@ public class Team6976AutoPropMiddleRed extends LinearOpMode {
         robot.DriveLeftBack.setPower(0);
     }
     public void moveBackward (double power, int time){
-        robot.DriveRightFront.setPower(-power);
-        robot.DriveLeftFront.setPower(-power);
+        robot.DriveRightFront.setPower(power);
+        robot.DriveLeftFront.setPower(power);
         robot.DriveRightBack.setPower(power);
         robot.DriveLeftBack.setPower(power);
         sleep(time);
@@ -51,8 +51,8 @@ public class Team6976AutoPropMiddleRed extends LinearOpMode {
     public void moveLeft (double power, int time){
         robot.DriveRightFront.setPower(-power);
         robot.DriveLeftFront.setPower(power);
-        robot.DriveRightBack.setPower(-power );
-        robot.DriveLeftBack.setPower(power);
+        robot.DriveRightBack.setPower(power );
+        robot.DriveLeftBack.setPower(-power);
         sleep(time);
         robot.DriveRightFront.setPower(0);
         robot.DriveLeftFront.setPower(0);

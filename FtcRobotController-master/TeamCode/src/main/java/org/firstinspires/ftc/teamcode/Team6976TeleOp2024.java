@@ -25,8 +25,8 @@ public class Team6976TeleOp2024 extends LinearOpMode {
         robot.DriveRightBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.DriveLeftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.DriveLeftFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        robot.Drone.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        robot.Drone.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        robot.Drone1.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        robot.Drone1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
 
 
@@ -72,16 +72,16 @@ public class Team6976TeleOp2024 extends LinearOpMode {
             telemetry.addData("LeftBack", robot.DriveLeftBack.getCurrentPosition());
             telemetry.update();
 
-            robot.DriveLeftFront.setPower(frontLeftPower * mag);
+            robot.DriveLeftFront.setPower(frontLeftPower * -mag);
             robot.DriveLeftBack.setPower(backLeftPower * -mag);
-            robot.DriveRightFront.setPower(frontRightPower * mag);
+            robot.DriveRightFront.setPower(frontRightPower * -mag);
             robot.DriveRightBack.setPower(backRightPower * -mag);
 
             while(gamepad1.dpad_right){
                 robot.DriveLeftFront.setPower(0.5 * mag);
                 robot.DriveRightFront.setPower(-0.5 * mag);
                 robot.DriveLeftBack.setPower(0.5 * mag);
-                robot.DriveRightBack.setPower(-0.5 * mag);
+                robot.DriveRightBack.setPower(0.5 * mag);
             }
             while(gamepad1.dpad_left){
                 robot.DriveLeftFront.setPower(-0.5 * mag);
@@ -101,10 +101,14 @@ public class Team6976TeleOp2024 extends LinearOpMode {
                 robot.DriveLeftBack.setPower(0.5 * mag);
                 robot.DriveRightBack.setPower(0.5 * mag);
             }
+            boolean ArmSlow = gamepad2.x;
+            double slow = ArmSlow ? 0.55 : 1;
+            boolean ArmFast = gamepad2.x;
+            double fast = ArmFast ? 10 : 1;
 
             double armPos = gamepad2.left_stick_y;
-            robot.lArmServo.setPower(armPos * 0.6);
-            robot.rArmServo.setPower(-armPos * 0.6);
+            robot.lArmServo.setPower(armPos * 0.6 * slow * fast);
+            robot.rArmServo.setPower(-armPos * 0.6 * slow * fast);
 
 
 
@@ -139,9 +143,9 @@ public class Team6976TeleOp2024 extends LinearOpMode {
 //
 //
             if (gamepad2.x) { //Closed
-            robot.Drone.setPower(1);
+            robot.Drone1.setPower(10);
             }
-            robot.Drone.setPower(0);
+            robot.Drone1.setPower(0);
 
 //
 //

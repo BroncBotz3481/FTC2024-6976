@@ -19,10 +19,10 @@ public class Team6976AutoPropMiddleBlueFar extends LinearOpMode {
             robot.DriveLeftFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
             double tick = (distance * 537.7)/(4 * Math.PI);
             Time.reset();
-            robot.DriveRightFront.setPower(multy); //Setting the power to (multy) variable created above (-multy for red side)
-            robot.DriveLeftFront.setPower(multy); //Link to Wheel Direction Mapping Below
-            robot.DriveRightBack.setPower(multy); //https://gm0.org/en/latest/docs/software/tutorials/mecanum-drive.html
-            robot.DriveLeftBack.setPower(multy);
+            robot.DriveRightFront.setPower(-multy); //Setting the power to (multy) variable created above (-multy for red side)
+            robot.DriveLeftFront.setPower(-multy); //Link to Wheel Direction Mapping Below
+            robot.DriveRightBack.setPower(-multy); //https://gm0.org/en/latest/docs/software/tutorials/mecanum-drive.html
+            robot.DriveLeftBack.setPower(-multy);
 
 
             while(opModeIsActive() && Time.milliseconds() < 2000 && robot.DriveLeftFront.getCurrentPosition() < tick) { //If Encoder is outputting incorrectly, motor will automatically stop if time in miliseconds has been reached
@@ -49,10 +49,10 @@ public class Team6976AutoPropMiddleBlueFar extends LinearOpMode {
             Time.reset();
 
             // Set power for all motors to move backward
-            robot.DriveRightFront.setPower(-multy);
+            robot.DriveRightFront.setPower(multy);
             robot.DriveLeftFront.setPower(-multy);
             robot.DriveRightBack.setPower(-multy);
-            robot.DriveLeftBack.setPower(-multy);
+            robot.DriveLeftBack.setPower(multy);
 
 // Continue until the OpMode is active, elapsed time is less than 2000 milliseconds, and the left front motor's encoder position is greater than or equal to the target tick count
             while(opModeIsActive() && Time.milliseconds() < 2000 && robot.DriveLeftFront.getCurrentPosition() > -backwardTick) {

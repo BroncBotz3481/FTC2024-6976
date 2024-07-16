@@ -19,9 +19,7 @@ public class Team6976AutoPropMiddleRed extends LinearOpMode {
         waitForStart();
 
         moveForward(0.4 , 1650); //moves forward
-        moveBackward(0.4,1600); //backwards
-        moveLeft(0.5,2100);
-        moveForward(0.4 , 500); //moves forward
+
 
 
 
